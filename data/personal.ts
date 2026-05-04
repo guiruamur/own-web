@@ -1,0 +1,17 @@
+export const personal = {
+  firstName:       "Guillermo",
+  lastName:        "Ruano Muriedas",
+  email:           "guiruamur@gmail.com",
+  location:        "Sevilla, España",
+  linkedin:        "https://www.linkedin.com/in/guillermo-ruano-muriedas-74253830a",
+  role:            "Full Stack Developer · IT Technician",
+  bio:             "Soy un informático y programador nacido en Sevilla en el año 2000. Combino desarrollo de software con soporte técnico para crear soluciones que funcionan de verdad. Siempre buscando el siguiente reto.",
+  available:       true,
+  availableText:   "Disponible para nuevas oportunidades",
+  experienceSince: "2021",
+  english:         "B2",
+  profilePhoto:    "/images/personal-profile.jpg",
+  year:            "2025",
+  seoTitle:        "Guillermo Ruano Muriedas — Full Stack Developer",
+  seoDescription:  "Portfolio de Guillermo Ruano Muriedas. Técnico Informático y Desarrollador Full Stack con experiencia en Node.js, TypeScript, MySQL, Docker y desarrollo móvil.",
+};

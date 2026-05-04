@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-display: var(--font-bricolage);
+  --font-sans:    var(--font-manrope);
+
+  --color-bg:       #F5F4F0;
+  --color-white:    #FFFFFF;
+  --color-ink:      #0D0D0D;
+  --color-ink-2:    #3A3A3A;
+  --color-ink-3:    #777777;
+  --color-blue:     #2563EB;
+  --color-blue-dk:  #1D4ED8;
+  --color-blue-lt:  #EFF6FF;
+  --color-line:     #E0DED8;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #F5F4F0;
+  color: #0D0D0D;
+  font-family: var(--font-manrope), 'Manrope', sans-serif;
+}
+
+::selection { background: #DBEAFE; color: #1D4ED8; }
+
+::-webkit-scrollbar          { width: 4px; }
+::-webkit-scrollbar-track    { background: #F5F4F0; }
+::-webkit-scrollbar-thumb    { background: #C8C6C0; border-radius: 4px; }
+
+.animate-fade-up  { animation: fade-up  0.6s cubic-bezier(0.16,1,0.3,1) both; }
+.animate-fade-in  { animation: fade-in  0.5s ease-out both; }
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
