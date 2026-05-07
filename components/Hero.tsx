@@ -1,90 +1,27 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
 import { ArrowRight, ExternalLink, MapPin, Calendar, Globe } from "lucide-react";
-import Image from "next/image";
 import { personal } from "@/data/personal";
-
-const ANIM_END = 280;
-const TARGET_Y = 10;
-const END_SCALE = 0.30;
+import FlyingName from "./hero/FlyingName";
+import ProfilePhoto from "./hero/ProfilePhoto";
+import { useFlyingName } from "./hero/useFlyingName";
 
 export default function Hero() {
-  const [imgOk,    setImgOk]   = useState(true);
-  const [scrollY,  setScrollY] = useState(0);
-  const [initRect, setInitRect] = useState<{ top: number; left: number } | null>(null);
-  const [baseFonts, setBaseFonts] = useState({ main: 104, sub: 64 });
-
-  const nameRef        = useRef<HTMLDivElement>(null);
-  const mainSpanRef    = useRef<HTMLSpanElement>(null);
-  const subSpanRef     = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    const measure = () => {
-      if (nameRef.current) {
-        const r = nameRef.current.getBoundingClientRect();
-        setInitRect({ top: r.top, left: r.left });
-      }
-      if (mainSpanRef.current && subSpanRef.current) {
-        setBaseFonts({
-          main: parseFloat(window.getComputedStyle(mainSpanRef.current).fontSize),
-          sub:  parseFloat(window.getComputedStyle(subSpanRef.current).fontSize),
-        });
-      }
-    };
-    measure();
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
-  }, []);
-
-  useEffect(() => {
-    const fn = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", fn, { passive: true });
-    return () => window.removeEventListener("scroll", fn);
-  }, []);
-
-  const isFlying   = scrollY > 0 && initRect !== null;
-  const progress   = initRect ? Math.min(1, scrollY / ANIM_END) : 0;
-  const scale      = 1 - (1 - END_SCALE) * progress;
-
-  const flyTop     = initRect ? (initRect.top - scrollY) * (1 - progress) + TARGET_Y * progress : 0;
-  const flyLeft    = initRect ? initRect.left : 0;
-  const flyFontMain = baseFonts.main * scale;
-  const flyFontSub  = baseFonts.sub  * scale;
+  const { containerRef, mainRef, subRef, style } = useFlyingName();
 
   return (
     <section className="min-h-screen flex items-center bg-bg">
 
-      {/* ── Nombre volador ── */}
-      {isFlying && (
-        <div
-          style={{
-            position:      "fixed",
-            top:           flyTop,
-            left:          flyLeft,
-            zIndex:        60,
-            pointerEvents: "none",
-          }}
-        >
-          <span
-            className="block font-display font-extrabold leading-[1.0] tracking-tight text-ink"
-            style={{ fontSize: flyFontMain }}
-          >
-            {personal.firstName}
-          </span>
-          <span
-            className="block font-display font-extrabold leading-[1.0] tracking-tight text-ink-3"
-            style={{ fontSize: flyFontSub }}
-          >
-            {personal.lastName}
-          </span>
-        </div>
-      )}
+      <FlyingName
+        firstName={personal.firstName}
+        lastName={personal.lastName}
+        style={style}
+      />
 
       <div className="max-w-5xl mx-auto px-6 pt-28 pb-20 w-full">
         <div className="grid lg:grid-cols-[1fr_380px] gap-12 xl:gap-20 items-center">
 
-          {/* ── Columna izquierda: texto ── */}
+          {/* Columna izquierda: texto */}
           <div>
             <div className="animate-fade-in mb-10">
               <span className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 bg-white border border-line rounded-full text-ink-2">
@@ -93,13 +30,13 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* Original h1 — oculto mientras vuela */}
-            <div ref={nameRef} style={{ visibility: isFlying ? "hidden" : "visible" }}>
+            {/* Nombre original — oculto mientras vuela el clon */}
+            <div ref={containerRef} style={{ visibility: style.visible ? "hidden" : "visible" }}>
               <h1 className="animate-fade-up font-display font-extrabold leading-[1.0] tracking-tight mb-6">
-                <span ref={mainSpanRef} className="block text-[clamp(3.2rem,8vw,6.5rem)] text-ink">
+                <span ref={mainRef} className="block text-[clamp(3.2rem,8vw,6.5rem)] text-ink">
                   {personal.firstName}
                 </span>
-                <span ref={subSpanRef} className="block text-[clamp(2rem,5vw,4rem)] text-ink-3 font-bold">
+                <span ref={subRef} className="block text-[clamp(2rem,5vw,4rem)] text-ink-3 font-bold">
                   {personal.lastName}
                 </span>
               </h1>
@@ -151,34 +88,10 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* ── Columna derecha: foto ── */}
-          <div className="animate-fade-up delay-200 flex justify-center lg:justify-end">
-            <div className="relative w-[300px] h-[380px] lg:w-[360px] lg:h-[460px] rounded-2xl overflow-hidden border border-line shadow-sm">
-              {imgOk ? (
-                <Image
-                  src={personal.profilePhoto}
-                  alt={`${personal.firstName} ${personal.lastName}`}
-                  fill
-                  className="object-cover object-[20%_top]"
-                  priority
-                  onError={() => setImgOk(false)}
-                />
-              ) : (
-                <div className="w-full h-full flex flex-col items-center justify-center bg-[#ECEAE5] text-ink-3 select-none">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-16 h-16 mb-4 opacity-25"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
-                  </svg>
-                  <p className="text-xs font-medium opacity-40">Tu foto aquí</p>
-                  <p className="text-xs font-mono opacity-30 mt-1">public/profile.jpg</p>
-                </div>
-              )}
-            </div>
-          </div>
+          <ProfilePhoto
+            src={personal.profilePhoto}
+            alt={`${personal.firstName} ${personal.lastName}`}
+          />
 
         </div>
       </div>

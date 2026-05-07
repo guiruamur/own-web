@@ -12,9 +12,8 @@ export type Job = {
   desc:    string;
   tags:    string[];
   extra: {
-    paragraphs:   string[];
-    photos:       string[];
-    hidePhotos?:  boolean;
+    paragraphs: string[];
+    photos:     string[];
   };
 };
 
@@ -54,8 +53,7 @@ export const jobs: Job[] = [
         "El stack del proyecto combinaba Laravel para las APIs del backend, MySQL como base de datos y React Native con Expo en el lado del cliente. Comenzamos por el diseño del modelo de datos y los wireframes en Figma antes de ponernos a escribir código.",
         "Tuve que dejar el proyecto antes de su finalización, por lo que quedó en una fase inicial. Está pendiente de retomar el contacto con la empresa para darle continuidad en el futuro.",
       ],
-      photos:     [],
-      hidePhotos: true,
+      photos: [],
     },
   },
   {
@@ -91,8 +89,7 @@ export const jobs: Job[] = [
         "El proyecto más importante fue el montaje de un servidor desde cero en Bormujos: comenzamos por el rack, configuramos los switches y fuimos construyendo toda la infraestructura necesaria hasta tener el módulo operativo. Una experiencia que me enseñó que montar una red no es solo enchufar cables.",
         "Además de la parte de redes, también me encargué de la reparación y el reacondicionamiento de equipos, lo que me permitió ganar soltura con el hardware y desarrollar un buen ojo para el diagnóstico.",
       ],
-      photos:     [],
-      hidePhotos: true,
+      photos: [],
     },
   },
 ];
