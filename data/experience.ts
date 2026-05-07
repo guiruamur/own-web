@@ -29,7 +29,12 @@ export const jobs: Job[] = [
     tags:    ["Hardware", "Soporte", "Sistemas", "Redes"],
     extra: {
       paragraphs: [
-        "Mi trabajo en Pentínfor consiste en ofrecer soporte informático y servicio de atención helpdesk tanto a particulares como a empresas, resolviendo incidencias y manteniendo sus sistemas en funcionamiento.",
+        "Tras terminar mis estudios decidí buscar trabajo a toda costa, lo que me llevó a encontrar mi sitio en Pentínfor: una tienda de informática especializada en ofrecer servicios informáticos integrales a empresas.",
+        "El puesto no encajaba del todo con lo que buscaba, ya que no es un rol de desarrollador como tal. Pero no iba a perder la oportunidad de aprender cosas nuevas, así que no lo dudé.",
+        "Poco a poco fui profundizando en soporte técnico, redes, reparación de equipos y diagnóstico a un nivel mucho más alto del que había visto hasta entonces. Una experiencia que ha ampliado bastante mi visión de la informática.",
+        "El puesto supone ofrecer un servicio informático completo: desde soporte helpdesk hasta asistencia in situ, pasando por reparación de equipos, configuración de redes, mantenimiento de impresoras y cualquier clase de intervención que precise el cliente.",
+        "A lo largo de este último año también he ganado mucha soltura moviéndome por Sevilla. La empresa cuenta con una furgoneta para las intervenciones, y además aprendí a llevar una motocicleta 125cc para trasladarme con mayor eficiencia en los momentos en que el vehículo principal estuviese ocupado en otra intervención.",
+        "Y la cosa no termina ahí: también he podido poner en práctica mis habilidades de programación creando pequeños programas que me facilitan el día a día en el trabajo, automatizando tareas repetitivas y ahorrando tiempo en lo cotidiano.",
       ],
       photos: [],
     },
