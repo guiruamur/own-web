@@ -14,9 +14,10 @@ type Props = {
 export default function JobCard({ job, open, onToggle, bodyId }: Props) {
   return (
     <div
+      onClick={() => { if (!open) onToggle(); }}
       className={`bg-white border rounded-xl transition-all duration-200 hover:border-blue/40 hover:shadow-sm ${
         job.current ? "border-blue/50" : "border-line"
-      }`}
+      } ${!open ? "cursor-pointer" : ""}`}
     >
       <div className="p-4 md:p-5">
         <div className="flex flex-wrap gap-4 justify-between items-start mb-3">
@@ -48,7 +49,7 @@ export default function JobCard({ job, open, onToggle, bodyId }: Props) {
           </div>
           <button
             type="button"
-            onClick={onToggle}
+            onClick={(e) => { e.stopPropagation(); onToggle(); }}
             aria-expanded={open}
             aria-controls={bodyId}
             className="flex items-center gap-1.5 text-sm font-semibold px-4 py-2 rounded-lg border border-blue/30 text-blue bg-blue-lt hover:bg-blue hover:text-white hover:border-blue transition-all duration-200 flex-shrink-0"
@@ -62,7 +63,7 @@ export default function JobCard({ job, open, onToggle, bodyId }: Props) {
         </div>
       </div>
 
-      <JobBody job={job} open={open} id={bodyId} />
+      <JobBody job={job} open={open} id={bodyId} onClose={onToggle} />
     </div>
   );
 }

@@ -39,7 +39,7 @@ export default function Contact() {
 
         <div className="mt-20 pt-8 border-t border-line">
           <p className="text-sm text-ink-3">
-            {personal.firstName} {personal.lastName} · {personal.location} · {personal.year}
+            {personal.firstName} {personal.lastName} · {personal.location} · {new Date().getFullYear()}
           </p>
         </div>
       </div>

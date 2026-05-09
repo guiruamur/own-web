@@ -1,10 +1,12 @@
+import { ChevronUp } from "lucide-react";
 import type { Job } from "@/data/experience";
 import JobPhotoLayout from "./JobPhotoLayout";
 
 type Props = {
-  job:  Job;
-  open: boolean;
-  id:   string;
+  job:     Job;
+  open:    boolean;
+  id:      string;
+  onClose: () => void;
 };
 
 /**
@@ -12,7 +14,7 @@ type Props = {
  * (`grid-template-rows: 0fr → 1fr`) so it adapts to the actual content
  * height without magic max-height numbers.
  */
-export default function JobBody({ job, open, id }: Props) {
+export default function JobBody({ job, open, id, onClose }: Props) {
   const hasFloatLayout = job.extra.photos.length === 2;
 
   return (
@@ -34,10 +36,22 @@ export default function JobBody({ job, open, id }: Props) {
           ) : (
             <div className="space-y-4">
               {job.extra.paragraphs.map((p, i) => (
-                <p key={i} className="text-ink-2 text-sm leading-relaxed">{p}</p>
+                <p key={i} className="text-ink-2 text-sm leading-relaxed text-justify">{p}</p>
               ))}
             </div>
           )}
+
+          <div className="clear-both flex justify-end mt-6">
+            <button
+              type="button"
+              onClick={(e) => { e.stopPropagation(); onClose(); }}
+              tabIndex={open ? 0 : -1}
+              className="flex items-center gap-1.5 text-sm font-semibold px-4 py-2 rounded-lg border border-blue/30 text-blue bg-blue-lt hover:bg-blue hover:text-white hover:border-blue transition-all duration-200"
+            >
+              Cerrar
+              <ChevronUp size={14} />
+            </button>
+          </div>
         </div>
       </div>
     </div>
