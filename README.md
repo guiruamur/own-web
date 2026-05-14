@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# own-web
 
-## Getting Started
+Portfolio personal de Guillermo Ruano Muriedas — Desarrollador Full Stack y Técnico IT (Sevilla, España).
 
-First, run the development server:
+🌐 **En producción:** [ruanodev.com](https://ruanodev.com)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Stack
+
+- **[Next.js 16](https://nextjs.org)** con App Router
+- **React 19**
+- **Tailwind CSS v4** (sin `tailwind.config.js`; tokens en `@theme inline`)
+- **TypeScript** strict
+- **Bricolage Grotesque** + **Manrope** vía `next/font/google`
+- **lucide-react** para iconografía
+
+## Estructura
+
+Single-page con una sola ruta (`/`) compuesta por secciones independientes:
+
+```
+Navbar → Hero → About → Experience → Skills → Education → Contact
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```
+app/
+  layout.tsx        ← metadata SEO + carga de fuentes
+  page.tsx          ← orquesta las secciones
+  globals.css       ← tokens de tema, animaciones
+components/
+  Navbar.tsx
+  Hero.tsx          + hero/ (FlyingName, ProfilePhoto, useFlyingName hook)
+  About.tsx
+  Experience.tsx    + experience/ (JobCard, JobBody, JobPhotoLayout)
+  Skills.tsx
+  Education.tsx
+  Contact.tsx
+data/
+  personal.ts, nav.ts, about.ts, experience.ts,
+  skills.ts, education.ts, contact.ts
+public/
+  images/           ← fotos de perfil y proyectos
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Todo el contenido (puestos, skills, formación, copy) vive en [data/](data/) como exports de TypeScript — los componentes solo consumen, no definen contenido.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+```bash
+npm run dev      # Servidor de desarrollo en http://localhost:3000
+npm run build    # Build de producción
+npm run start    # Servir el build
+npm run lint     # ESLint (next/core-web-vitals + TypeScript)
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Convenciones
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Theme tokens** en `app/globals.css` (`text-ink`, `bg-bg`, `border-line`, `text-blue`, etc.) en vez de colores raw de Tailwind.
+- **Tipografía**: `font-display` para títulos, `font-sans` para cuerpo.
+- **Path alias** `@/*` resuelve a la raíz del repo (ej. `@/components/Navbar`, `@/data/experience`).
+- **Server vs client components**: solo `"use client"` donde haga falta API del navegador (scroll, `useState`, etc.). El resto, server components.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Despliegue
 
-## Deploy on Vercel
+Conectado a Vercel — push a `main` dispara redeploy automático.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Licencia
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Código fuente bajo MIT. El contenido (textos, fotos personales) es propiedad del autor.
