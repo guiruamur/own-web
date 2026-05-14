@@ -62,7 +62,3 @@ npm run lint     # ESLint (next/core-web-vitals + TypeScript)
 ## Despliegue
 
 Conectado a Vercel — push a `main` dispara redeploy automático.
-
-## Licencia
-
-Código fuente bajo MIT. El contenido (textos, fotos personales) es propiedad del autor.
