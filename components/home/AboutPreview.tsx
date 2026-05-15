@@ -30,7 +30,7 @@ export default function AboutPreview() {
             {aboutContent.traits.map((t) => (
               <div
                 key={t.title}
-                className="p-6 bg-background rounded-xl border border-outline-variant/30 hover:border-primary hover:-translate-y-0.5 transition-all"
+                className="p-6 bg-background rounded-xl border border-outline-variant/30"
               >
                 <Icon name={t.icon} fill className="text-primary mb-4" />
                 <h4 className="font-headline text-headline-md text-on-surface mb-2">{t.title}</h4>
