@@ -1,23 +1,15 @@
-import Navbar     from "@/components/Navbar";
-import Hero       from "@/components/Hero";
-import About      from "@/components/About";
-import Skills     from "@/components/Skills";
-import Experience from "@/components/Experience";
-import Education  from "@/components/Education";
-import Projects   from "@/components/Projects";
-import Contact    from "@/components/Contact";
+import type { Metadata } from "next";
+import { personal } from "@/data/personal";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title:       personal.seoTitle,
+  description: personal.seoDescription,
+};
+
+export default function HomePage() {
   return (
-    <main>
-      <Navbar />
-      <Hero />
-      <About />
-      <Experience />
-      <Skills />
-      <Education />
-      <Projects />
-      <Contact />
+    <main className="pt-24 min-h-screen">
+      {/* Inicio en construcción — se completará en Task 7 */}
     </main>
   );
 }
