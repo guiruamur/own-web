@@ -1,7 +1,7 @@
 export const personal = {
   firstName:       "Guillermo",
   lastName:        "Ruano Muriedas",
-  email:           "guiruamur@gmail.com",
+  email:           "ruanomuriedas@gmail.com",
   location:        "Sevilla, España",
   linkedin:        "https://www.linkedin.com/in/guillermo-ruano-muriedas-74253830a",
   github:          "https://github.com/guiruamur",
