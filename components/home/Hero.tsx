@@ -57,7 +57,7 @@ export default function Hero() {
         </div>
 
         <div className="flex-1 relative w-full max-w-md lg:max-w-none">
-          <div className="aspect-square rounded-2xl overflow-hidden bg-surface-container-high relative z-10">
+          <div className="aspect-[20/23] rounded-2xl overflow-hidden bg-surface-container-high relative z-10">
             <Image
               src={personal.profilePhoto}
               alt={`${personal.firstName} ${personal.lastName}`}
