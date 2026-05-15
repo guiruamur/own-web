@@ -1,6 +1,9 @@
 export const experienceSection = {
-  label:   "02 · Experiencia",
-  heading: "Por donde he pasado",
+  label:       "02 · Experiencia",
+  heading:     "Por donde he pasado",
+  pageEyebrow: "Trayectoria profesional",
+  pageHeading: "Por donde he pasado y lo que he aprendido",
+  pageIntro:   "Una visión estructurada de mi evolución técnica, desde el soporte de sistemas hasta el desarrollo full stack y el emprendimiento.",
 };
 
 export type Job = {

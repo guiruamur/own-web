@@ -1,6 +1,7 @@
 export const projectsSection = {
-  label:   "05 · Proyectos",
+  label:   "04 · Proyectos",
   heading: "Lo que he construido",
+  intro:   "Una selección de proyectos personales donde aplico nuevas tecnologías y resuelvo problemas reales, desde automatización hasta sistemas de gestión.",
 };
 
 export type Project = {
@@ -8,6 +9,8 @@ export type Project = {
   objetivo:     string;
   technologies: string[];
   cuerpo:       string[];
+  icon:         string;
+  image?:       string;
   links?: {
     live?:   string;
     github?: string;
@@ -19,14 +22,15 @@ export const projects: Project[] = [
   {
     title:    "Portfolio personal — ruanodev.com",
     current:  true,
+    icon:     "devices",
     objetivo: "Tener un sitio propio donde demuestre que sigo siendo dev a pesar de mi rol actual como técnico IT, con identidad visual, código mantenible para iterar en el tiempo y total libertad para experimentar.",
     technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind v4", "Vercel"],
     cuerpo: [
       "El portfolio nació de una necesidad concreta: aunque mi puesto actual es de técnico IT, sigo siendo desarrollador y necesitaba un escaparate donde poder enseñarlo. La web no es solo un currículum decorado — es el mejor argumento posible de que sigo escribiendo código y tomando decisiones de diseño.",
       "Construido sobre Next.js 16 con App Router y React 19, todo en TypeScript estricto. El estilo va con Tailwind v4 — sin tailwind.config.js, los tokens del tema viven en globals.css usando la directiva @theme inline. Los componentes que necesitan API del navegador (scroll, useState) van como client components; el resto son server components. Sin sobreingeniería: solo client donde de verdad hace falta.",
-      "La paleta es intencional: un azul oscuro saturado (#1E40AF) como acento sobre un fondo cálido (#F5F4F0). Bricolage Grotesque para los display y Manrope para el cuerpo — un emparejamiento que da personalidad sin estridencias. Todos los colores y fuentes se usan a través de tokens semánticos (text-ink, bg-bg, text-blue, etc.) en lugar de valores raw, así un cambio en un sitio repercute en todo.",
-      "Algunos rincones técnicos que me dieron buen rato: el efecto del nombre del hero que se encoge y desliza al hacer scroll, medido en tiempo real con requestAnimationFrame; el acordeón de Experiencia que anima de forma fluida sin max-height mágicos usando el truco de grid-template-rows: 0fr → 1fr; y el escalado responsive en pantallas grandes con un clamp() en el font-size del :root para que todo (anchos, paddings, fuentes) crezca proporcionalmente al viewport.",
-      "El proyecto ha ido ganando definición a base de iteración: empezó con un azul más vivo que después afiné a uno más sobrio, los datos pasaron de vivir hardcoded en componentes a estar en /data/ como exports limpios, y los componentes grandes (Hero, Experience) acabaron descompuestos en subcarpetas para mantener archivos pequeños y enfocados. La filosofía: cada decisión debe poder defenderse, y si más adelante no se sostiene, se cambia. El portfolio no es un producto terminado, es un proyecto vivo.",
+      "La paleta es intencional: un azul oscuro saturado (#1E40AF) como acento sobre un fondo claro (#f9f9ff). Manrope para los display, Inter para el cuerpo y JetBrains Mono para los labels — un emparejamiento que da personalidad sin estridencias. Todos los colores y fuentes se usan a través de tokens semánticos (text-primary, bg-background, font-headline, etc.) en lugar de valores raw, así un cambio en un sitio repercute en todo.",
+      "Algunos rincones técnicos que me dieron buen rato: el acordeón de Experiencia y Proyectos que anima de forma fluida sin max-height mágicos usando el truco de grid-template-rows: 0fr → 1fr; el scroll-reveal con IntersectionObserver que respeta prefers-reduced-motion; y la migración a multipágina con App Router de Next.js 16, donde cada ruta carga sólo lo que necesita.",
+      "El proyecto ha ido ganando definición a base de iteración: la paleta evolucionó hacia tonos más sobrios, los datos pasaron de vivir hardcoded en componentes a estar en /data/ como exports limpios, y la arquitectura saltó de un single-page apilado a un sitio multipágina con secciones dedicadas. La filosofía: cada decisión debe poder defenderse, y si más adelante no se sostiene, se cambia. El portfolio no es un producto terminado, es un proyecto vivo.",
     ],
     links: {
       live: "https://ruanodev.com",
@@ -34,6 +38,7 @@ export const projects: Project[] = [
   },
   {
     title:    "Money Farmer",
+    icon:     "query_stats",
     objetivo: "Un servicio local que genera señales de criptomonedas combinando un LLM corriendo en tu propia máquina (Ollama) con RAG y memoria de feedback. Todo en local, sin enviar datos a terceros y sin ejecutar órdenes reales: solo análisis y señales.",
     technologies: ["Python", "Ollama", "RAG", "SQLite", "Telegram Bot API"],
     cuerpo: [
@@ -48,6 +53,7 @@ export const projects: Project[] = [
   },
   {
     title:    "Driver Manager",
+    icon:     "memory",
     objetivo: "Resolver una carencia real del Administrador de Dispositivos de Windows: ver de un vistazo qué driver gobierna cada dispositivo, cuál falla y qué paquetes duplicados se acumulan en el Driver Store. Una herramienta portable, sin instalador, pensada para llevar en un USB.",
     technologies: ["C#", ".NET 8", "WPF", "P/Invoke", "WMI"],
     cuerpo: [
