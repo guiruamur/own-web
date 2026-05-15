@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         <div className="flex-1 space-y-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-highest text-primary rounded-full font-label text-label-sm">
-            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+            <span className="w-2 h-2 bg-green-600 rounded-full animate-pulse" />
             {personal.availableText}
           </div>
 
@@ -18,7 +18,7 @@ export default function Hero() {
               {personal.role}
             </p>
             <h1 className="font-headline text-headline-xl-mobile md:text-headline-xl text-on-surface mb-6">
-              Construyendo soluciones robustas que funcionan.
+              Construyendo un futuro a mi alrededor.
             </h1>
             <p className="font-body text-body-lg text-text-muted max-w-xl">
               {personal.bio}

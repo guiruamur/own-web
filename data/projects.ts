@@ -23,6 +23,7 @@ export const projects: Project[] = [
     title:    "Portfolio personal — ruanodev.com",
     current:  true,
     icon:     "devices",
+    image:    "/images/project-portfolio.jpg",
     objetivo: "Tener un sitio propio donde demuestre que sigo siendo dev a pesar de mi rol actual como técnico IT, con identidad visual, código mantenible para iterar en el tiempo y total libertad para experimentar.",
     technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind v4", "Vercel"],
     cuerpo: [
@@ -39,6 +40,7 @@ export const projects: Project[] = [
   {
     title:    "Money Farmer",
     icon:     "query_stats",
+    image:    "/images/project-money-farmer.jpg",
     objetivo: "Un servicio local que genera señales de criptomonedas combinando un LLM corriendo en tu propia máquina (Ollama) con RAG y memoria de feedback. Todo en local, sin enviar datos a terceros y sin ejecutar órdenes reales: solo análisis y señales.",
     technologies: ["Python", "Ollama", "RAG", "SQLite", "Telegram Bot API"],
     cuerpo: [
@@ -54,6 +56,7 @@ export const projects: Project[] = [
   {
     title:    "Driver Manager",
     icon:     "memory",
+    image:    "/images/project-driver-manager.jpg",
     objetivo: "Resolver una carencia real del Administrador de Dispositivos de Windows: ver de un vistazo qué driver gobierna cada dispositivo, cuál falla y qué paquetes duplicados se acumulan en el Driver Store. Una herramienta portable, sin instalador, pensada para llevar en un USB.",
     technologies: ["C#", ".NET 8", "WPF", "P/Invoke", "WMI"],
     cuerpo: [

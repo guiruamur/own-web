@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="flex flex-col items-center md:items-start gap-2">
           <span className="font-headline text-headline-md font-bold text-on-surface">
-            Guillermo
+            Guillermo Ruano
           </span>
           <p className="font-label text-label-sm text-text-muted">
             © {new Date().getFullYear()} {personal.firstName} {personal.lastName}. {personal.location}.

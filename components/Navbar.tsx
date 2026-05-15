@@ -19,7 +19,7 @@ export default function Navbar() {
           href="/"
           className="font-headline text-headline-md font-bold text-on-surface"
         >
-          Guillermo
+          Guillermo Ruano
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
