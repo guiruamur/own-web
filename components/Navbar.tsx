@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/data/nav";
+import { personal } from "@/data/personal";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -15,11 +16,13 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm border-b border-outline-variant/30">
       <div className="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-4 flex justify-between items-center">
-        <Link
-          href="/"
-          className="font-headline text-headline-md font-bold text-on-surface"
-        >
-          Guillermo Ruano
+        <Link href="/" className="flex flex-col leading-none gap-1">
+          <span className="font-headline text-headline-md font-bold text-on-surface">
+            {personal.firstName}
+          </span>
+          <span className="font-label text-label-sm text-text-muted uppercase tracking-widest">
+            {personal.lastName}
+          </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
