@@ -1,9 +1,10 @@
 export const personal = {
   firstName:       "Guillermo",
   lastName:        "Ruano Muriedas",
-  email:           "guiruamur@gmail.com",
+  email:           "ruanomuriedas@gmail.com",
   location:        "Sevilla, España",
   linkedin:        "https://www.linkedin.com/in/guillermo-ruano-muriedas-74253830a",
+  github:          "https://github.com/guiruamur",
   role:            "Desarrollador Full Stack · Técnico IT",
   bio:             "Soy un informático y programador nacido en Sevilla en el año 2000. Combino desarrollo de software con soporte técnico para crear soluciones que funcionan de verdad. Siempre buscando el siguiente reto.",
   available:       true,

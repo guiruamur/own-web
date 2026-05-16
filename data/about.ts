@@ -9,9 +9,9 @@ export const aboutContent = {
     "Conozco la tecnología desde dos ángulos: el del código y el del hardware. Eso me da una perspectiva distinta cuando algo falla o cuando hay que tomar decisiones.",
   ],
   traits: [
-    { title: "Proactivo",             desc: "No espero a que alguien me diga qué hacer. Busco el siguiente paso."                                      },
-    { title: "Trabajo en equipo",      desc: "Me adapto rápido a cualquier equipo y contexto de trabajo."                                              },
-    { title: "Aprendizaje continuo",   desc: "Curiosidad natural por nuevas tecnologías. Siempre estudiando."                                          },
-    { title: "Orientado a soluciones", desc: "Todo proyecto trae sus imprevistos. Me gusta anticiparlos y resolverlos sin perder el foco."             },
+    { icon: "rocket_launch", title: "Proactivo",              desc: "No espero a que alguien me diga qué hacer. Busco el siguiente paso."                                              },
+    { icon: "groups",        title: "Trabajo en equipo",      desc: "Me adapto rápido a cualquier equipo y contexto de trabajo."                                                      },
+    { icon: "school",        title: "Aprendizaje continuo",   desc: "Curiosidad natural por nuevas tecnologías. Siempre estudiando."                                                  },
+    { icon: "psychology",    title: "Orientado a soluciones", desc: "Todo proyecto trae sus imprevistos. Me gusta anticiparlos y resolverlos sin perder el foco."                     },
   ],
 };

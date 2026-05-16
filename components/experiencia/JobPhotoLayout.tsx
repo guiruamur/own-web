@@ -6,10 +6,6 @@ type Props = {
   alt:        string;
 };
 
-/**
- * Two-photo journalistic layout: each photo floats on alternating sides
- * with the paragraphs flowing around them.
- */
 export default function JobPhotoLayout({ photos, paragraphs, alt }: Props) {
   const half  = Math.ceil(paragraphs.length / 2);
   const first = paragraphs.slice(0, half);
@@ -34,11 +30,11 @@ function PhotoBlock({ side, src, alt, paragraphs }: BlockProps) {
   const float = side === "right" ? "float-right ml-4" : "float-left mr-4";
   return (
     <div className={`overflow-hidden ${side === "right" ? "mb-3" : ""}`}>
-      <div className={`${float} mb-2 w-2/5 relative aspect-[4/3] rounded-lg overflow-hidden border border-line`}>
-        <Image src={src} alt={alt} fill className="object-cover" />
+      <div className={`${float} mb-2 w-2/5 relative aspect-[4/3] rounded-lg overflow-hidden border border-outline-variant/40`}>
+        <Image src={src} alt={alt} fill sizes="40vw" className="object-cover" />
       </div>
       {paragraphs.map((p, i) => (
-        <p key={i} className="text-ink-2 text-sm leading-relaxed mb-3 text-justify">{p}</p>
+        <p key={i} className="text-text-muted text-body-md leading-relaxed mb-3 text-justify">{p}</p>
       ))}
     </div>
   );

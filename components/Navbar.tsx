@@ -1,74 +1,83 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { navLinks } from "@/data/nav";
+import { personal } from "@/data/personal";
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [open,     setOpen]     = useState(false);
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", fn, { passive: true });
-    return () => window.removeEventListener("scroll", fn);
-  }, []);
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white border-b border-line shadow-sm" : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="w-32" />
+    <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm border-b border-outline-variant/30">
+      <div className="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-4 flex justify-between items-center">
+        <Link href="/" className="flex flex-col leading-none gap-1">
+          <span className="font-headline text-headline-md font-bold text-on-surface">
+            {personal.firstName}
+          </span>
+          <span className="font-label text-label-sm text-text-muted uppercase tracking-widest">
+            {personal.lastName}
+          </span>
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((l) => (
-            <a
+            <Link
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-ink-3 hover:text-ink transition-colors duration-200"
+              className={`font-label text-label-md pb-1 transition-colors ${
+                isActive(l.href)
+                  ? "text-primary border-b-2 border-primary"
+                  : "text-text-muted hover:text-primary"
+              }`}
             >
               {l.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#contact"
-            className="text-sm font-semibold px-5 py-2.5 bg-blue text-white rounded-lg hover:bg-blue-dk transition-colors duration-200"
+          <Link
+            href="/contacto"
+            className="bg-primary text-on-primary px-6 py-2 rounded-lg font-label text-label-md hover:bg-primary-container transition-all duration-300"
           >
             Contactar
-          </a>
+          </Link>
         </div>
 
         <button
-          className="md:hidden text-ink-3 hover:text-ink"
+          className="md:hidden text-on-surface"
           onClick={() => setOpen(!open)}
-          aria-label="Menu"
+          aria-label="Menú"
+          aria-expanded={open}
         >
-          {open ? <X size={22} /> : <Menu size={22} />}
+          <span className="material-symbols-outlined">{open ? "close" : "menu"}</span>
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden bg-white border-t border-line px-6 py-5 flex flex-col gap-4">
+        <div className="md:hidden bg-surface border-t border-outline-variant/30 px-margin-mobile py-5 flex flex-col gap-4">
           {navLinks.map((l) => (
-            <a
+            <Link
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-ink-3 hover:text-ink transition-colors"
               onClick={() => setOpen(false)}
+              className={`font-label text-label-md transition-colors ${
+                isActive(l.href) ? "text-primary" : "text-text-muted hover:text-primary"
+              }`}
             >
               {l.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#contact"
-            className="text-sm font-semibold px-5 py-2.5 bg-blue text-white rounded-lg text-center"
+          <Link
+            href="/contacto"
             onClick={() => setOpen(false)}
+            className="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label text-label-md text-center"
           >
             Contactar
-          </a>
+          </Link>
         </div>
       )}
     </nav>

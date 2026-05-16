@@ -1,23 +1,27 @@
-import Navbar     from "@/components/Navbar";
-import Hero       from "@/components/Hero";
-import About      from "@/components/About";
-import Skills     from "@/components/Skills";
-import Experience from "@/components/Experience";
-import Education  from "@/components/Education";
-import Projects   from "@/components/Projects";
-import Contact    from "@/components/Contact";
+import type { Metadata } from "next";
+import { personal } from "@/data/personal";
+import Reveal from "@/components/Reveal";
+import Hero from "@/components/home/Hero";
+import AboutPreview from "@/components/home/AboutPreview";
+import ExperiencePreview from "@/components/home/ExperiencePreview";
+import StackPreview from "@/components/home/StackPreview";
+import ProjectsPreview from "@/components/home/ProjectsPreview";
+import ContactCTA from "@/components/ui/ContactCTA";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title:       personal.seoTitle,
+  description: personal.seoDescription,
+};
+
+export default function HomePage() {
   return (
     <main>
-      <Navbar />
       <Hero />
-      <About />
-      <Experience />
-      <Skills />
-      <Education />
-      <Projects />
-      <Contact />
+      <Reveal><AboutPreview /></Reveal>
+      <Reveal><ExperiencePreview /></Reveal>
+      <Reveal><StackPreview /></Reveal>
+      <Reveal><ProjectsPreview /></Reveal>
+      <Reveal><ContactCTA variant="solid" /></Reveal>
     </main>
   );
 }

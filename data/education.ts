@@ -1,5 +1,5 @@
 export const educationSection = {
-  label:   "04 · Educación",
+  label:   "Educación",
   heading: "Mi formación",
 };
 
@@ -25,15 +25,7 @@ export const edu: EduEntry[] = [
   },
 ];
 
-export const idiomasCard = {
-  period: "Idiomas",
-  title:  "Inglés — Nivel B2",
-  center: "Certificación B1 oficial",
-  desc:   "Comunicación técnica fluida. Lectura de documentación, trabajo en equipos internacionales y redacción de código en inglés.",
-};
-
-export const ctaCard = {
-  eyebrow: "Siempre aprendiendo",
-  title:   "La formación no termina con el título",
-  desc:    "Más allá de los ciclos, sigo formándome por cuenta propia. La tecnología avanza rápido y me gusta estar al día.",
+export const languagesCard = {
+  heading: "Idiomas y otros",
+  quote:   "La formación no termina con el título. Sigo aprendiendo cada día para estar al día con la tecnología.",
 };
