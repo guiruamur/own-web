@@ -124,3 +124,21 @@ body {
   word-wrap: normal;
   direction: ltr;
 }
+
+/* Typing-terminal cursor (components/home/TerminalAnimation.tsx) */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.05em;
+  margin-left: 4px;
+  vertical-align: middle;
+  background-color: #3b82f6;
+  animation: blink 1s step-end infinite;
+}
+/* hide the auto-scroll scrollbar inside the terminal */
+.terminal-scroll { scrollbar-width: none; }
+.terminal-scroll::-webkit-scrollbar { display: none; }
