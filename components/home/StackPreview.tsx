@@ -1,13 +1,15 @@
 import { skillsSection, skillGroups, languages } from "@/data/skills";
 import SectionLabel from "@/components/ui/SectionLabel";
+import ShaderBackground from "@/components/ui/ShaderBackground";
 
 export default function StackPreview() {
   return (
-    <section id="stack" className="py-24 md:py-32 bg-background-alt">
-      <div className="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop">
+    <section id="stack" className="relative overflow-hidden py-24 md:py-32 bg-[#070b1e]">
+      <ShaderBackground />
+      <div className="relative z-10 max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop">
         <div className="text-center">
-          <SectionLabel className="inline-block">{skillsSection.label}</SectionLabel>
-          <h2 className="font-headline text-headline-xl-mobile md:text-headline-xl mt-4 mb-12 md:mb-16">
+          <SectionLabel tone="on-dark" className="inline-block">{skillsSection.label}</SectionLabel>
+          <h2 className="font-headline text-headline-xl-mobile md:text-headline-xl mt-4 mb-12 md:mb-16 text-white">
             {skillsSection.heading}
           </h2>
         </div>

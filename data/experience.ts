@@ -22,7 +22,7 @@ export type Job = {
 
 export const jobs: Job[] = [
   {
-    date:    "Abril 2025 — Actualidad",
+    date:    "Abril 2025 – Actualidad",
     role:    "Técnico Informático",
     company: "Pentínfor",
     type:    "Trabajo actual",
@@ -71,7 +71,7 @@ export const jobs: Job[] = [
         "Quise sacar provecho de una afición que tengo desde pequeño: soy un gran fan de los juegos de construcción de LEGO y veía un problema del que podía sacar rendimiento. Existe un gran mercado de artículos descatalogados de años anteriores que ya no se pueden comprar pero que siguen gustando mucho, con la pega de que para conseguirlos dependes del mercado de segunda mano, donde los precios que ponen los particulares a veces son directamente absurdos.",
         "El punto estaba en que en plataformas de segunda mano españolas y del oeste de Europa como Vinted y Wallapop, muchos de esos artículos se vendían como juguetes más que como piezas de colección a precios muy competitivos. Sin embargo, esos mismos artículos estaban muy cotizados en el resto de Europa e incluso del mundo.",
         "Empecé creándome una cuenta en BrickLink, una plataforma destinada a comprar y vender estos artículos a nivel mundial, con listado de precios de venta y contadores de existencias. Poco a poco fui comprando las mejores ofertas disponibles en las apps de segunda mano y llamando a almacenes de toda España preguntando por existencias abandonadas para negociar la compra de todo lo que quedaba, subiéndolo después a mi perfil de tienda.",
-        "La experiencia me llevó a contactar con personas de todas partes del mundo — Europa, Rusia, Estados Unidos, Tailandia, China, Japón — y terminé montando toda una infraestructura de almacenaje y logística a una escala reducida pero eficiente. Gracias a este emprendimiento pude dar un gran empujón a mi calidad de vida y mantener unos ingresos que, aunque limitados, fueron suficientes para cubrir gastos personales y costearme cursos de formación.",
+        "La experiencia me llevó a contactar con personas de todas partes del mundo (Europa, Rusia, Estados Unidos, Tailandia, China, Japón) y terminé montando toda una infraestructura de almacenaje y logística a una escala reducida pero eficiente. Gracias a este emprendimiento pude dar un gran empujón a mi calidad de vida y mantener unos ingresos que, aunque limitados, fueron suficientes para cubrir gastos personales y costearme cursos de formación.",
         "Finalmente, en 2022 y tras una pequeña etapa de recesión en la productividad, decidí cerrar el proyecto para matricularme en el ciclo de Desarrollo de Aplicaciones Multiplataforma y centrarme de lleno en mi formación, dando así paso al siguiente capítulo.",
       ],
       photos: ["/images/lego-2.jpg", "/images/lego-1.jpg"],

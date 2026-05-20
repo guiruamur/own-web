@@ -15,7 +15,7 @@ export default function ProjectsPreview() {
         </h2>
 
         <div className="space-y-12 md:space-y-16">
-          {projects.map((p, i) => {
+          {projects.slice(0, 3).map((p, i) => {
             const reversed = i % 2 === 1;
             return (
               <article
