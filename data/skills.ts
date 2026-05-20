@@ -15,7 +15,3 @@ export const languages = [
   { name: "Inglés",  level: "Nivel B2" },
   { name: "Español", level: "Nativo"   },
 ];
-
-export const extras = [
-  { name: "Licencia", level: "Permiso B" },
-];

@@ -53,6 +53,9 @@ export default function Hero() {
             <div className="flex items-center gap-2">
               <Icon name="translate" className="text-primary" /> Inglés {personal.english}
             </div>
+            <div className="flex items-center gap-2">
+              <Icon name="directions_car" className="text-primary" /> Permiso de conducir {personal.license}
+            </div>
           </div>
         </div>
 

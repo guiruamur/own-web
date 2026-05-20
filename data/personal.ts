@@ -11,6 +11,7 @@ export const personal = {
   availableText:   "Disponible para nuevas oportunidades",
   experienceSince: "2021",
   english:         "B2",
+  license:         "B",
   profilePhoto:    "/images/profile.jpg",
   seoTitle:        "Guillermo Ruano Muriedas — Full Stack Developer",
   seoDescription:  "Portfolio de Guillermo Ruano Muriedas. Técnico Informático y Desarrollador Full Stack con experiencia en Node.js, TypeScript, MySQL, Docker y desarrollo móvil.",
