@@ -92,7 +92,7 @@ export const projects: Project[] = [
     },
   },
   {
-    title:    "Proyecto confidencial · App móvil en equipo",
+    title:    "App móvil en equipo",
     icon:     "smartphone",
     image:    "/images/project-confidencial.jpg",
     objetivo: "Aplicación móvil desarrollada en equipo bajo acuerdo de confidencialidad. No puedo decir el nombre, qué hace ni su modelo de negocio, pero sí con qué está construida y, sobre todo, cómo trabajamos en equipo, que es donde está lo interesante.",
