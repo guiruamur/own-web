@@ -5,6 +5,7 @@ import Reveal from "@/components/Reveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import ContactCTA from "@/components/ui/ContactCTA";
 import ProjectCard from "@/components/proyectos/ProjectCard";
+import LearningCard from "@/components/proyectos/LearningCard";
 
 export const metadata: Metadata = {
   title:       `Proyectos · ${personal.firstName} ${personal.lastName}`,
@@ -32,6 +33,10 @@ export default function ProyectosPage() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal className="block mt-12">
+          <LearningCard />
+        </Reveal>
       </section>
 
       <div className="mt-20 md:mt-24">
