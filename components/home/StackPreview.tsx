@@ -1,4 +1,4 @@
-import { skillsSection, skillGroups, languages, extras } from "@/data/skills";
+import { skillsSection, skillGroups, languages } from "@/data/skills";
 import SectionLabel from "@/components/ui/SectionLabel";
 
 export default function StackPreview() {
@@ -35,7 +35,7 @@ export default function StackPreview() {
           <div className="p-6 md:p-8 bg-surface-white rounded-2xl shadow-sm border border-outline-variant/20">
             <h4 className="font-label text-label-md text-primary mb-6">Idiomas</h4>
             <div className="space-y-3">
-              {[...languages, ...extras].map((l) => (
+              {languages.map((l) => (
                 <div key={l.name} className="flex justify-between items-center">
                   <span className="font-label text-label-sm">{l.name}</span>
                   <span className="text-xs text-primary font-bold px-2 py-1 bg-primary-fixed rounded">
