@@ -46,6 +46,7 @@ export const projects: Project[] = [
   {
     title:    "Checkin App",
     icon:     "punch_clock",
+    image:    "/images/project-checkin.jpg",
     objetivo: "Una web SaaS de registro horario para empresas de azafatos y personal de eventos, conforme a la RD-Ley 8/2019. Multi-tenant: cada empresa opera aislada por completo; los trabajadores fichan desde el móvil con un QR del evento más un PIN, y el administrador gestiona agenda, clientes y reportes desde una PWA.",
     technologies: ["React", "TypeScript", "Supabase", "PostgreSQL", "Cloudflare Workers"],
     cuerpo: [
@@ -91,8 +92,9 @@ export const projects: Project[] = [
     },
   },
   {
-    title:    "Proyecto confidencial · App móvil en equipo",
+    title:    "App móvil en equipo",
     icon:     "smartphone",
+    image:    "/images/project-confidencial.jpg",
     objetivo: "Aplicación móvil desarrollada en equipo bajo acuerdo de confidencialidad. No puedo decir el nombre, qué hace ni su modelo de negocio, pero sí con qué está construida y, sobre todo, cómo trabajamos en equipo, que es donde está lo interesante.",
     technologies: ["Flutter", "Dart", "Rust", "PostgreSQL", "Fly.io"],
     cuerpo: [
