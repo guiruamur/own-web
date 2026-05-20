@@ -26,6 +26,6 @@ export const edu: EduEntry[] = [
 ];
 
 export const languagesCard = {
-  heading: "Idiomas y otros",
+  heading: "Idiomas",
   quote:   "La formación no termina con el título. Sigo aprendiendo cada día para estar al día con la tecnología.",
 };
